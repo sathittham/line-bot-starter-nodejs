@@ -2,14 +2,22 @@
 
 A simple starter template for creating a LINE Messaging API bot using Node.js, Express, and the official `@line/bot-sdk`. This project sets up a basic echo bot that replies to any text message with the same text. It's designed for easy local development and testing using `ngrok`.
 
+## ✨ Compatibility
+
+- ✅ **LINE Bot SDK v10** compatible
+- ✅ **Express 5.1.0** compatible
+- ✅ **Node.js 20+** support
+- ✅ **Production ready** implementation
+
 ## Features
 
 - **Simple Echo Bot:** A clean starting point that echoes user messages.
 - **Node.js & Express:** Built on a standard, lightweight web server stack.
-- **Official LINE SDK:** Uses `@line/bot-sdk` for easy integration with the Messaging API.
+- **Official LINE SDK:** Uses `@line/bot-sdk` v10 for easy integration with the Messaging API.
 - **Environment-Ready:** Uses `dotenv` to manage your secret credentials safely.
 - **Local Development with ngrok:** Includes instructions for exposing your local server to the internet for webhook testing.
 - **Unit Testing with Jest:** Comes with a pre-configured test environment using Jest to ensure code quality.
+- **Modern API:** Updated to use the latest LINE Messaging API v10 format.
 
 
 ---
@@ -22,9 +30,17 @@ Follow these instructions to get your own copy of the project up and running on 
 
 Make sure you have the following installed:
 
-- Node.js (which includes npm)
-- ngrok - A tool to create a secure tunnel to your local machine.
-- A LINE Account to create a developer channel.
+- **Node.js 20 or higher** (which includes npm)
+- **ngrok** - A tool to create a secure tunnel to your local machine.
+- **A LINE Account** to create a developer channel.
+
+### Dependencies
+
+This project uses:
+- `@line/bot-sdk`: ^10.0.0 (LINE Messaging API SDK v10)
+- `express`: ^5.1.0 (Web framework)
+- `dotenv`: ^17.0.1 (Environment variable management)
+- `jest`: ^30.0.4 (Testing framework)
 
 ### 1. Set Up Your LINE Developers Channel
 
@@ -95,6 +111,24 @@ Make sure you have the following installed:
     -   In the "Messaging API" tab, you'll find a QR code for your bot.
     -   Scan it with your phone's LINE app to add the bot as a friend.
     -   Send it a message, and it will echo your message back to you!
+
+---
+
+## 🔄 Updates in LINE SDK v10
+
+This project has been updated to use the latest LINE Bot SDK v10.0.0, which includes important API changes:
+
+### Key Changes:
+- **New Client Structure**: Replaced `line.Client()` with `line.messagingApi.MessagingApiClient()`
+- **Separate Middleware**: LINE middleware and messaging client now use separate configurations
+- **Updated API Format**: Message API calls now use the new v10 format
+- **Better Type Safety**: Improved TypeScript support and error handling
+
+### Migration Benefits:
+- ✅ Future-proof compatibility with LINE's latest features
+- ✅ Improved performance and reliability
+- ✅ Better error handling and debugging
+- ✅ Enhanced security with updated authentication
 
 ---
 
